@@ -1,4 +1,7 @@
 sudo: true
+language: node_js
+node_js:
+  - 10
 services:
   - docker
 
@@ -6,4 +9,4 @@ before_install:
   - docker build -f Dockerfile.dev -t manishsingh10895/docker-react .
 
 script:
-  - docker run manishsingh10895/docker-react npm run test -- --coverage
+  - docker run manishsingh10895/docker-react npm run test -- --coverage --watchAll=false
